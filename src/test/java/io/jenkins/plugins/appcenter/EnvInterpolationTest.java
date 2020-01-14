@@ -114,7 +114,7 @@ public class EnvInterpolationTest {
         mockWebServer.takeRequest();
         mockWebServer.takeRequest();
         final RecordedRequest recordedRequest = mockWebServer.takeRequest();
-        assertThat(recordedRequest.getBody().readUtf8()).contains("[{\"name\":\"casey\"},{\"name\":\"niccoli\"}]");
+        assertThat(recordedRequest.getBody().readUtf8()).contains("[{\"id\":\"casey\"},{\"id\":\"niccoli\"}]");
     }
 
     @Test

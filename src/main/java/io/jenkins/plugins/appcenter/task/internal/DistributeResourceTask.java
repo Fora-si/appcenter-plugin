@@ -45,7 +45,7 @@ public final class DistributeResourceTask implements AppCenterTask<UploadRequest
         final boolean mandatoryUpdate = false;
         final List<DestinationId> destinations = Stream.of(request.destinationGroups.split(","))
             .map(String::trim)
-            .map(name -> new DestinationId(name, null))
+            .map(groupId -> new DestinationId(null, groupId))
             .collect(Collectors.toList());
         final boolean notifyTesters = request.notifyTesters;
         final ReleaseDetailsUpdateRequest releaseDetailsUpdateRequest = new ReleaseDetailsUpdateRequest(releaseNotes, mandatoryUpdate, destinations, null, notifyTesters);
